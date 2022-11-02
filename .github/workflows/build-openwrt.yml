@@ -43,9 +43,9 @@ jobs:
       with:
         root-reserve-mb: 512
         swap-size-mb: 1024
-        remove-dotnet: 'false'
-        remove-android: 'false'
-        remove-haskell: 'false'
+        remove-dotnet: 'true'
+        remove-android: 'true'
+        remove-haskell: 'true'
         
     - name: Checkout
       uses: actions/checkout@v2.5.0  
