@@ -44,7 +44,7 @@ jobs:
         root-reserve-mb: 2048
         swap-size-mb: 1024
         temp-reserve-mb: 200
-        build-mount-path: 'true'
+        build-mount-path: 'false'
         remove-dotnet: 'true'
         remove-android: 'true'
         remove-haskell: 'true'
