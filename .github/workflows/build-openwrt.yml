@@ -55,7 +55,7 @@ jobs:
         swap-storage: true
         
     - name: Checkout
-      uses: actions/checkout@v2.5.0  
+      uses: actions/checkout@v3.1.0  
       
     - name: Disk space
       run: |
