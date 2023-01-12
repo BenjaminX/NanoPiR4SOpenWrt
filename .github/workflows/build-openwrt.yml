@@ -49,9 +49,9 @@ jobs:
         # all of these default to true, but feel free to set to
         # "false" if necessary for your workflow
         android: true
-        dotnet: false
+        dotnet: true
         haskell: true
-        large-packages: true
+        large-packages: false
         swap-storage: true
         
     - name: Checkout
