@@ -113,13 +113,12 @@ jobs:
     - name: Download package
       id: package
       run: |
+        chmod +x $DIY_P3_SH
         cd openwrt
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        chmod +x $DIY_P3_SH
-        cd openwrt
         $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: Compile the firmware
