@@ -38,6 +38,10 @@ echo '###  ###'
 # sed -i 's,kmod-r8169,kmod-r8168,g' target/linux/rockchip/image/armv8.mk
 # echo '###  ###'
 
+echo '### 修复 luci-app-syncdial 检测的 bug ###'
+sed -i 's/is online and tracking is active/and tracking is active/' target/linux/rockchip/armv8/base-files/usr/lib/lua/luci/model/cbi/syncdial.lua
+echo '###  ###'
+
 echo '### CacULE ###'
 sed -i '/CONFIG_NR_CPUS/d' ./target/linux/rockchip/armv8/config-5.4
 echo '
@@ -52,7 +56,10 @@ CONFIG_UKSM=y
 ' >> ./target/linux/rockchip/armv8/config-5.4
 echo '###  ###'
 
-# echo '### IRQ 调优 ###'
-# sed -i '/set_interface_core 20 "eth1"/a\set_interface_core 8 "ff3c0000" "ff3c0000.i2c"' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
-# sed -i '/set_interface_core 20 "eth1"/a\ethtool -C eth0 rx-usecs 1000 rx-frames 25 tx-usecs 100 tx-frames 25' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
-# echo '###  ###'
+# https://github.com/StarWhiz/NanoPi-R6S-CPU-Optimization-for-Gigabit-SQM/tree/main/R4S%20CPU%20Optimization
+echo '### IRQ 调优 ###'
+sed -i 's/sharevdi,guangmiao-g4c/friendlyelec,nanopi-r4s/' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
+sed -i 's/set_interface_core 10 "eth0"/set_interface_core 4 "eth0"/' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
+sed -i 's/set_interface_core 20 "eth1"/set_interface_core 8 "eth1"/' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
+sed -i '/set_interface_core 8 "eth1"/a\        echo -n 10 > /sys/class/net/eth0/queues/rx-0/rps_cpus\n        echo -n 20 > /sys/class/net/eth1/queues/rx-0/rps_cpus' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
+echo '###  ###'
