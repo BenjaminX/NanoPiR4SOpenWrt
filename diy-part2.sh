@@ -38,10 +38,6 @@ echo '###  ###'
 # sed -i 's,kmod-r8169,kmod-r8168,g' target/linux/rockchip/image/armv8.mk
 # echo '###  ###'
 
-echo '### 修复 luci-app-syncdial 检测的 bug ###'
-sed -i 's/is online and tracking is active/and tracking is active/' target/linux/rockchip/armv8/base-files/usr/lib/lua/luci/model/cbi/syncdial.lua
-echo '###  ###'
-
 echo '### CacULE ###'
 sed -i '/CONFIG_NR_CPUS/d' ./target/linux/rockchip/armv8/config-5.4
 echo '
