@@ -110,6 +110,8 @@ jobs:
       # Enable tmate debugging of manually-triggered workflows if the input option was provided
       uses: mxschmitt/action-tmate@v3
       if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+      with:
+        limit-access-to-actor: true
 
     - name: Download package
       id: package
