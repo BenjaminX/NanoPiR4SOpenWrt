@@ -14,10 +14,11 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      ssh:
-        description: 'Debugging with tmate'
+      debug_enabled:
+        type: boolean
+        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
         required: false
-        default: 'false'
+        default: false
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -106,8 +107,9 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Debugging with tmate
-      uses: mxschmitt/action-tmate@v3.19
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      # Enable tmate debugging of manually-triggered workflows if the input option was provided
+      uses: mxschmitt/action-tmate@v3
+      if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
 
     - name: Download package
       id: package
