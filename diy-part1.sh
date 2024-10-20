@@ -19,7 +19,7 @@ echo '### SSR helloworld ###'
 # echo "src-git oui https://github.com/zhaojh329/oui.git" >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git package/lean/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/lean/luci-app-argon-config
 echo '### Argon Theme Config ###'
 
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
