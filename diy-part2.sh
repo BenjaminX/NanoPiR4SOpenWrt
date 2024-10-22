@@ -60,8 +60,8 @@ sed -i 's/set_interface_core 20 "eth1"/set_interface_core 8 "eth1"/' target/linu
 sed -i '/set_interface_core 8 "eth1"/a\        echo -n 10 > /sys/class/net/eth0/queues/rx-0/rps_cpus\n        echo -n 20 > /sys/class/net/eth1/queues/rx-0/rps_cpus' target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
 echo '###  ###'
 
-echo '### 修复 luci-app-syncdial 检测的 bug ###'
+# echo '### 修复 luci-app-syncdial 检测的 bug ###'
 # rm -rf package/feeds/luci/luci-app-syncdial
 # git clone https://github.com/BenjaminX/luci-app-syncdial.git package/feeds/luci/luci-app-syncdial
-sed -i 's/is online and tracking is active/and tracking is active/' package/feeds/luci/luci-app-syncdial/luasrc/model/cbi/syncdial.lua
-echo '###  ###'
+# sed -i 's/is online and tracking is active/and tracking is active/' package/feeds/luci/luci-app-syncdial/luasrc/model/cbi/syncdial.lua
+# echo '###  ###'
