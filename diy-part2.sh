@@ -61,7 +61,7 @@ sed -i '/set_interface_core 8 "eth1"/a\        echo -n 10 > /sys/class/net/eth0/
 echo '###  ###'
 
 echo '### 修复 luci-app-syncdial 检测的 bug ###'
-rm -rf package/feeds/luci/luci-app-syncdial
-git clone https://github.com/BenjaminX/luci-app-syncdial.git package/feeds/luci/luci-app-syncdial
+# rm -rf package/feeds/luci/luci-app-syncdial
+# git clone https://github.com/BenjaminX/luci-app-syncdial.git package/feeds/luci/luci-app-syncdial
 sed -i 's/is online and tracking is active/and tracking is active/' package/feeds/luci/luci-app-syncdial/luasrc/model/cbi/syncdial.lua
 echo '###  ###'
