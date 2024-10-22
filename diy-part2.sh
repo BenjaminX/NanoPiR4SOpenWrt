@@ -39,17 +39,17 @@ echo '###  ###'
 # echo '###  ###'
 
 echo '### CacULE ###'
-sed -i '/CONFIG_NR_CPUS/d' ./target/linux/rockchip/armv8/config-5.4
+sed -i '/CONFIG_NR_CPUS/d' ./target/linux/rockchip/armv8/config-6.6
 echo '
 CONFIG_NR_CPUS=6
-' >> ./target/linux/rockchip/armv8/config-5.4
+' >> ./target/linux/rockchip/armv8/config-6.6
 echo '###  ###'
 
 echo '### UKSM ###'
 echo '
-CONFIG_KSM=y
+# CONFIG_KSM=y
 CONFIG_UKSM=y
-' >> ./target/linux/rockchip/armv8/config-5.4
+' >> ./target/linux/rockchip/armv8/config-6.6
 echo '###  ###'
 
 # https://github.com/StarWhiz/NanoPi-R6S-CPU-Optimization-for-Gigabit-SQM/tree/main/R4S%20CPU%20Optimization
