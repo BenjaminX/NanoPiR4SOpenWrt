@@ -24,7 +24,7 @@ echo '###  ###'
 # echo '### Updates Theme Argon ###'
 # package/lean/luci-theme-argon /package/feeds/luci/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon
 echo '###  ###'
 
 # echo '### 添加 R4S GPU 驱动 ###'
