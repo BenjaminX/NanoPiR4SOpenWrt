@@ -26,6 +26,10 @@ rm -rf package/feeds/luci/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon
 echo '###  ###'
 
+echo '### Fixed Theme Argon /*# sourceMappingURL=cascade.css.map */ error ###'
+sed -i 's|/\*# sourceMappingURL=cascade.css.map \*/||g' package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/css/cascade.css
+echo '###  ###'
+
 # echo '### 添加 R4S GPU 驱动 ###'
 # rm -rf package/kernel/linux/modules/video.mk
 # wget -P package/kernel/linux/modules/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/package/kernel/linux/modules/video.mk
