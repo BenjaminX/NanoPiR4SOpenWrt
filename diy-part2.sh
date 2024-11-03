@@ -21,8 +21,7 @@ echo '###  ###'
 # sed -i 's/KERNEL_TESTING_PATCHVER=5.4/KERNEL_TESTING_PATCHVER=5.19/g' target/linux/rockchip/Makefile
 # echo '###  ###'
 
-# echo '### Updates Theme Argon ###'
-# package/lean/luci-theme-argon /package/feeds/luci/luci-theme-argon
+echo '### Updates Theme Argon ###'
 rm -rf package/feeds/luci/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon
 echo '###  ###'
