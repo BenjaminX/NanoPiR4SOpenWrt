@@ -36,7 +36,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
            
     steps:
 
@@ -52,7 +52,7 @@ jobs:
         remove-codeql: 'true'
         
     - name: Checkout
-      uses: actions/checkout@v3.1.0  
+      uses: actions/checkout@main
       
     - name: Disk space
       run: |
