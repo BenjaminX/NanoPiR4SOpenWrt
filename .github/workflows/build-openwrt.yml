@@ -40,8 +40,8 @@ jobs:
            
     steps:
 
-      - name: Optimize disk space
-        uses: typeling1578/optimize-disk-space@main
+    - name: Optimize disk space
+      uses: typeling1578/optimize-disk-space@main
 
     # - name: Free Disk Space (Ubuntu)
     #   uses: jlumbroso/free-disk-space@main
