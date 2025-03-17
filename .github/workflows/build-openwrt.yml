@@ -36,7 +36,7 @@ env:
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: self-hosted
            
     steps:
 
