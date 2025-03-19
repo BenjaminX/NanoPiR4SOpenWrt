@@ -36,10 +36,13 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
            
     steps:
-    
+
+    # - name: Optimize disk space
+    #   uses: typeling1578/optimize-disk-space@main
+
     # - name: Free Disk Space (Ubuntu)
     #   uses: jlumbroso/free-disk-space@main
     #   with:
@@ -85,11 +88,12 @@ jobs:
     #     sudo chown $USER:$GROUPS /workdir
 
     - name: Clone source code
-      working-directory: /home/gpu/
+      working-directory: /workdir
       run: |
         df -hT $PWD
+        rm -rf /workdir/openwrt
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /home/gpu/openwrt $GITHUB_WORKSPACE/openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
       run: |
@@ -228,4 +232,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Remove openwrt
-      run: cd /home/gpu/openwrt && rm -rf *.*
+      run: cd /workdir && rm -rf openwrt
