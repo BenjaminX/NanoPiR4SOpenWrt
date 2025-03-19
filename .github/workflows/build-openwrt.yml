@@ -85,7 +85,7 @@ jobs:
     #     sudo chown $USER:$GROUPS /workdir
 
     - name: Clone source code
-      working-directory: /home/gpu/openwrt
+      working-directory: /home/gpu/
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
