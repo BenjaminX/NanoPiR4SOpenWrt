@@ -66,6 +66,7 @@ jobs:
       run: |
            echo "Free space:"
            df -h
+           mkdir -p /workdir
            
     # - name: Initialization environment
     #   env:
