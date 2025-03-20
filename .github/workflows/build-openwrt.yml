@@ -228,4 +228,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Remove openwrt
-      run: cd /workdir && rm -rf openwrt
+      run: cd /workdir && rm -rf openwrt/
