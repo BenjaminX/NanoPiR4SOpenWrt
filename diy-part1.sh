@@ -26,8 +26,8 @@ echo '### Argon Theme Config ###'
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/lean/luci-app-poweroff
 echo '### Shutdown Router ###'
 
-git clone https://github.com/BenjaminX/luci-app-syncdial.git package/lean/luci-app-syncdial
-echo '### luci-app-syncdial ###'
+# git clone https://github.com/BenjaminX/luci-app-syncdial.git package/lean/luci-app-syncdial
+# echo '### luci-app-syncdial ###'
 
 # 移除 openwrt feeds 自带的核心包
 # rm -rf feeds/packages/net/{libustream-mbedtls20201210}
